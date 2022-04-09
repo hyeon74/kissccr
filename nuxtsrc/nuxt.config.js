@@ -53,6 +53,10 @@ export default {
     { path: '/api', handler: '~/api/index.js' }
   ],
 
+  router: {
+    middleware: 'auth'
+  },
+
   firebase: {
     // REQUIRED: Official config for firebase.initializeApp(config):
     config: {
