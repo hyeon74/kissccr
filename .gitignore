@@ -69,9 +69,9 @@ node_modules/
 .firebase
 public
 .firebaserc
-# database.rules.json
-# firebase.json
-# firestore.indexes.json
-# firestore.rules
+database.rules.json
+#firebase.json
+#firestore.indexes.json
+firestore.rules
 # package-lock.json
-# storage.rules
+storage.rules

@@ -1106,9 +1106,9 @@
   resolved "https://registry.npmjs.org/@firebase/firestore-types/-/firestore-types-2.5.0.tgz"
   integrity sha512-I6c2m1zUhZ5SH0cWPmINabDyH5w0PPFHk2UHsjBpKdZllzJZ2TwTkXbDtpHUZNmnc/zAa0WNMNMvcvbb/xJLKA==
 
-"@firebase/firestore@3.4.7":
+"@firebase/firestore@3.4.7", "@firebase/firestore@^3.4.7":
   version "3.4.7"
-  resolved "https://registry.npmjs.org/@firebase/firestore/-/firestore-3.4.7.tgz"
+  resolved "https://registry.yarnpkg.com/@firebase/firestore/-/firestore-3.4.7.tgz#aa31d8dd4fdb527fd3cc8ca57706a3137be06bf4"
   integrity sha512-bE8k72cw0zJKOsKTOeRp2As0nNZIv3To9qQe0mTtHu4O8dSdst6izSXixZEXDOuMf/dp7VOY8+VBW/ZqeqWQsA==
   dependencies:
     "@firebase/component" "0.5.12"
@@ -1778,7 +1778,7 @@
 
 "@nuxtjs/firebase@^8.2.2":
   version "8.2.2"
-  resolved "https://registry.npmjs.org/@nuxtjs/firebase/-/firebase-8.2.2.tgz"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/firebase/-/firebase-8.2.2.tgz#a449a1b0d289d8907145f62a8a2503bc2ae31b20"
   integrity sha512-j+kW0utwq23w71D0I4RyOc9/eYGe8WpsoI2GD9PT744rMWmj4MFHASjmgyDPk2KdZGxsknxUW6yq29aLd0E2ow==
   dependencies:
     consola "^2.15.3"

@@ -105,17 +105,17 @@ export default {
         {
           icon: 'mdi-chart-bubble',
           title: 'MixGas01',
-          to: '/mixgas01'
+          to: '/mixgas/mixgas01'
         },
         {
           icon: 'mdi-chart-bubble',
           title: 'MixGas02',
-          to: '/mixgas02'
+          to: '/mixgas/mixgas02'
         },
         {
           icon: 'mdi-chart-bubble',
           title: 'MixGas03',
-          to: '/mixgas03'
+          to: '/mixgas/mixgas03'
         }
       ],
       miniVariant: false,

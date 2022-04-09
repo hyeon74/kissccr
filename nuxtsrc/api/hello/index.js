@@ -1,12 +1,16 @@
-const express = require('express')
-const app = express()
+import moment from 'moment'
+const router = require('express').Router()
 
-app.get('/', (req, res, next) => {
-  res.send('here is root' + Math.random())
+router.get('/', (req, res, next) => {
+  const ss = []
+  ss.push('hello backend')
+  ss.push(Math.random())
+  ss.push(
+    moment()
+      .toDate()
+      .toLocaleTimeString()
+  )
+  res.send(ss.join('-'))
 })
-app.use('/hello', require('./hello'))
 
-module.exports = {
-  path: '/api',
-  handler: app
-}
+module.exports = router

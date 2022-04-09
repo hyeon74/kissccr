@@ -13,14 +13,20 @@ const cors = require('cors');
 
 const app = express();
 
+admin.initializeApp();
+
 const verifyToken = async (req, res, next) => {
     console.log(JSON.stringify(req.headers))
-    const tk = req.headers.authorization
-    //const tk = req.headers.authorization.split.split(' ')[1]
-    const u = await admin.auth().verifyIdToken(tk)
-                    .then((decoded) => res.status(200).send(decoded))
-                    .catch((err) => res.status(401).send(err));
-    console.log(u)
+    let tk = req.headers.authorization
+    console.log('##############tk['+ tk + ']')
+    tk = tk.split(' ')[1]
+    try{
+      const u = await admin.auth().verifyIdToken(tk)
+      console.log(u)
+    }catch(e){
+      console.log('##############'+ e)
+    }
+   
     next()
   }
   
