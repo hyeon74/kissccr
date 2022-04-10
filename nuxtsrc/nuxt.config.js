@@ -29,6 +29,7 @@ export default {
     '@/plugins/firebase',
     '@/plugins/etc',
     '@/plugins/moment',
+    '@/plugins/persistedState'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -54,7 +55,7 @@ export default {
   ],
 
   router: {
-    middleware: 'auth'
+    middleware: ['auth']
   },
 
   firebase: {
