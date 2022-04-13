@@ -73,6 +73,8 @@
 export default{
     data() {
         return{
+            MIX_MOD,
+            MIX_PPO2,
             Dil_O2_Val: 21,
             Dil_N2_Val: 79,
             Dil_He_Val: 0,
@@ -88,36 +90,56 @@ export default{
         }
     },
     computed: {
-      //수심에 대한 절대압
+      //1-1. MOD
+      mixMod_Cal(){
+        //MOD = [(ppO2 / fO2) - 1] x 10
+        //MOD = [(1.10 / 0.15) - 1] x 10 = 63m
+        this.MIX_MOD = this.mixPpO2_Cal() 
+        
+      },
+      //1-2. ppO2
+      mixPpO2_Cal(){
+        //ppO2 = 산소 함량 x 주변압(bar)
+      
+      },
+      
+      //2.0.1. 수심에 대한 절대압
       depAta_Cal() {
+        
         return 'depAta_Cal';
       },
-      //END에 대한 절대값
+      //2.0.2. END에 대한 절대값
       endAta_Cal() {
         return 'endAta_Cal';
       },
-      //산소 부분압
+      //2.1.0. 산소 부분압
       ppO2_Cal() {
+        //pO2 (Setpoint = 산소 부분압) = 1.3
         return 'pO2Cal';
       },
-      //산소 비율
+      //2.1. 산소 (O2) : 산소 비율
       fO2_Cal() {
+        //fO2 = pO2 / 수심(bar) = 1.3 / 7 = 0.19 = 19%
         return 'fO2_Cal';
       },
-      //질소 부분압
+      //2.2.0.질소 부분압
       ppN2_Cal() {
+        //pN2 (질소 부분압) = (주변압 - 산소 부분압) / (희석 기체 헬륨 함량 + 질소 함량) x 질소 함량
         return 'ppN2_Cal';
       },
-      //질소 비율
+      //2.2. 질소 (N2) : 질소 비율
       fN2_Cal() {
+        //pN2 = (7 - 1.3) / (40 + 45) x 45 = 3.02 bar
         return 'fN2_Cal';
       },
-      //헬륨 부분압
+      //2.3.0. 부분압
       ppHe_Cal() {
+        //pHE (헬륨 부분압) = (주변압 - 산소 부분압) / (희석 기체 헬륨 함량 + 질소 함량) x 헬륨 함량\
         return 'ppHe_Cal';
       },
-      //헬륨 비율
+      //2.3. 질소 (N2) : 헬륨 비율
       fHe_Cal() {
+        //pHE = (7 - 1.3) / (40 + 45) x 40 = 2.68 bar
         return 'fHe_Cal';
       }
 
