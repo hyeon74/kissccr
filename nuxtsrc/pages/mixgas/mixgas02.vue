@@ -73,8 +73,8 @@
 export default{
     data() {
         return{
-            MIX_MOD,
-            MIX_PPO2,
+            //MIX_MOD,
+            //MIX_PPO2,
             Dil_O2_Val: 21,
             Dil_N2_Val: 79,
             Dil_He_Val: 0,
@@ -84,7 +84,7 @@ export default{
             Set_DEPTH_Val: 30,
             Set_END_Val: 30,
             Setpoint_Val: 1.3,
-            ppO2_MOD: 1.10,
+            ppO2_MOD_Val: 1.10,
             selection: [],
             items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
         }
@@ -94,7 +94,7 @@ export default{
       mixMod_Cal(){
         //MOD = [(ppO2 / fO2) - 1] x 10
         //MOD = [(1.10 / 0.15) - 1] x 10 = 63m
-        this.MIX_MOD = this.mixPpO2_Cal() 
+        this.MIX_MOD = this.ppO2_MOD_Val / (this.Dil_O2_Val/100)
         
       },
       //1-2. ppO2
