@@ -4,14 +4,16 @@ import 'firebase/firestore'
 import 'firebase/auth'
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
+/*
 const config = {
   apiKey: process.env.VUE_APP_apiKey,
   authDomain: process.env.VUE_APP_authDomain,
-  projectId: process.env.VUE_APP_projectId
+  projectId: process.env.VUE_APP_projectId,
 }
+*/
 
 export default function({ store, redirect }) {
-  if (!firebase.apps.length) firebase.initializeApp(config)
+  if (!firebase.apps.length) firebase.initializeApp()
 
   Vue.prototype.$auth = firebase.auth()
 
@@ -25,22 +27,30 @@ export default function({ store, redirect }) {
   })
 
   Vue.prototype.$imageUrl = async function(imageUrl) {
-    let storage = getStorage();
-    let starsRef = ref(storage, imageUrl);
+    const storage = getStorage();
+    const starsRef = ref(storage, imageUrl);
+    
+    console.log("############root:" + starsRef.root);
+    console.log("############root:" + starsRef.fullPath);
+    console.log("############root:" + starsRef.name);
+    console.log("############root:" + starsRef.bucket);
+    console.log("############root:parent:" + starsRef.parent);
+    console.log("############root:parent:" + getMetadata(starsRef));
 
-    console.log("############imageUrl:" + imageUrl);
-    let retUrl = "";
-    let imgUrl = await getDownloadURL(starsRef)
+    console.log("############ref:" + imageUrl);
+
+    
+    console.log("############ref:" + imageUrl);
+
+     const imgUrl = await getDownloadURL(starsRef)
                   .then((url) => {
-                    // Insert url into an <img> tag to "download"
-                    retUrl = url;
-                    console.log("############retUrl:" + retUrl);
-                    //return url;
+                    return url;
                   })
                   .catch((error) => {
-                    //return "error";
+                    return "error";
                   });
-    return retUrl;
+    console.log("############imgUrl:" + imgUrl);          
+    return imgUrl;
   }
-
+  
 }

@@ -5,7 +5,9 @@
        
       </v-btn>
        {{ this.getImgUrl('images/kissccr/kisslte01.JPG') }}
-       이미지<v-img :src=url></v-img>
+       이미지2
+       이미지<v-img v-bind=url></v-img>
+       {{ url }}
       </v-card>
 </template>
 <script>
@@ -26,8 +28,6 @@ export default {
     },
     getImgUrl(img){
       let imgUrl = this.$imageUrl(img);
-      //var imgUrl = this.$storage.getStorage().ref('images/kissccr/kisslte01.JPG');
-      //return imgUrl;
       this.url=imgUrl
     }
   }
