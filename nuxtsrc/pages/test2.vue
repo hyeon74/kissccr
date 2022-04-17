@@ -2,6 +2,7 @@
       <v-card>
       <v-btn autoresize @click="test">
         test
+<<<<<<< HEAD
         </v-btn>
        <v-img max-width="700" :src="this.imgurl1"></v-img><br/>
        <v-img max-width="700" :src="this.imgurl2"></v-img><br/>
@@ -10,6 +11,14 @@
        <v-img max-width="700" :src="this.imgurl5"></v-img><br/>
 
       
+=======
+       
+      </v-btn>
+       {{ this.getImgUrl('images/kissccr/kisslte01.JPG') }}
+       이미지2
+       이미지<v-img v-bind=url></v-img>
+       {{ url }}
+>>>>>>> 320a01d4c4c708858c301fb5f502f5ea3da89fad
       </v-card>
 </template>
 <script>
@@ -43,6 +52,7 @@ export default {
       console.log(data)
       this.text = data
     },
+<<<<<<< HEAD
     async getImgUrl(img){
       let starsRef = ref(getStorage(), img);
       let fname = await getDownloadURL(starsRef);
@@ -60,6 +70,12 @@ export default {
       //return fname
     },
 
+=======
+    getImgUrl(img){
+      let imgUrl = this.$imageUrl(img);
+      this.url=imgUrl
+    }
+>>>>>>> 320a01d4c4c708858c301fb5f502f5ea3da89fad
   }
 }
 </script>
