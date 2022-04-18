@@ -28,10 +28,11 @@ export default function({ store, redirect }) {
 
   /*
   Vue.prototype.$imageUrl = async function(imageUrl) {
-    const storage = getStorage();
-    const starsRef = ref(storage, imageUrl);
+    let storage = getStorage();
+    let starsRef = ref(storage, imageUrl);
 
-    const imgUrl = await getDownloadURL(starsRef)
+    //console.log("############imageUrl:" + imageUrl);
+    let imgUrl = await getDownloadURL(starsRef)
                   .then((url) => {
                     return url;
                   })
@@ -40,7 +41,8 @@ export default function({ store, redirect }) {
                   });
     return imgUrl;
   }
-
-*/
+  */
 
 }
+
+
