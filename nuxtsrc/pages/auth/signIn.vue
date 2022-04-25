@@ -32,7 +32,7 @@ export default {
     }
   },
   mounted() {
-     //console.log('user:' + this.$store.state.auth.user.email);
+     console.log('##############user:' + this.$store.state.auth.user.email);
   },
   methods: {
     async signIn() {

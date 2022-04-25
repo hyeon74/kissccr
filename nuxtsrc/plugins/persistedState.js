@@ -3,7 +3,7 @@ import * as Cookies from "js-cookie";
 //import cookie from "cookie";
 //import SecureLS from "secure-ls";
 //  const ls = new SecureLS({ isCompression: false });
-/*
+
 export default ({ store, req }) => { 
     createPersistedState({
         paths: ["example","auth"],
@@ -37,4 +37,4 @@ export default ({ store, req }) => {
          } 
     })(store); 
 };
-*/
+

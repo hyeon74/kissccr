@@ -1,3 +1,5 @@
+//import { vuexfireMutations } from 'vuexfire'
+
 export const state = () => ({
     user: null
 })
@@ -12,5 +14,12 @@ export const mutations = {
         state.user = v
       }
     })
-  }
+  },
+  //...vuexfireMutations
 }
+
+//0. vuex
+//1. vuex-persistedstate
+//1. vuexfire
+//2. lodash
+

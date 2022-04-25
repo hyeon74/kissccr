@@ -4,6 +4,8 @@ import 'firebase/firestore'
 import 'firebase/auth'
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
+import { vuexfireMutations, firestoreAction } from "vuexfire";
+
 /*
 const config = {
   apiKey: process.env.VUE_APP_apiKey,
@@ -25,24 +27,13 @@ export default function({ store, redirect }) {
   firebase.auth().onAuthStateChanged(user => {
     store.commit('setUser', user)
   })
-
-  /*
-  Vue.prototype.$imageUrl = async function(imageUrl) {
-    let storage = getStorage();
-    let starsRef = ref(storage, imageUrl);
-
-    //console.log("############imageUrl:" + imageUrl);
-    let imgUrl = await getDownloadURL(starsRef)
-                  .then((url) => {
-                    return url;
-                  })
-                  .catch((error) => {
-                    return "error";
-                  });
-    return imgUrl;
-  }
-  */
-
 }
+
+//if (!firebase.apps.length) firebase.initializeApp();
+//const db = firebase.firestore();
+
+//export {
+  //db
+//};
 
 

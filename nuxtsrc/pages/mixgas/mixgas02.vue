@@ -258,11 +258,17 @@ export default{
        overO2Amt(v){
         if(this.Dil_He_Val + v > 100){
           this.Dil_He_Val = 100 - v
+          return true
+        }else{
+          return false
         }
       },
       overHeAmt(v){
         if(this.Dil_O2_Val + v > 100){
           this.Dil_O2_Val = 100 - v
+          return true
+        }else{
+          return false
         }
       },
         
